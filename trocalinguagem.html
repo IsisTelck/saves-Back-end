@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  
+<body>
+  <h1 style="color: green">
+    TROCA DE LINGUAGEM
+  </h1>
+    
+  <p>
+    Clique nos botões abaixo para mudar a língua
+  </p>
+  
+  <!-- Define the buttons that will 
+  change the language of the page 
+  and reload it -->
+  <button onclick="changeLanguage('eng')">
+    Inglês
+    </button>
+  <button onclick="changeLanguage('port')">
+    Português
+  </button>
+
+  <!-- Define the content of the page
+  that would be changed -->
+  <p id="siteContent">
+    Welcome to the GeeksforGeeks Portal! 
+    You can choose any language using the
+    buttons above!
+  </p>
+  
+  
+  <script>
+    // Create a function to change
+    // the hash value of the page
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    // Define the language reload anchors
+    var language = {
+      eng: {
+        welcome: "Welcome to the GeeksforGeeks " +
+        "Portal! You can choose any language " + 
+        "using the buttons above!"
+      },
+      port: {
+        welcome: "AGRO " +
+        "DO CAMPO À CIDADE, COLHENDO OPORTUNIDADES. " +
+        "Introdução do agro" +
+        " O agronegócio é o conjunto de atividades econômicas que estão conectadas ao comércio e a produção agrícola. É um dos pilares mais importantes da economia brasileira. A sigla Agro pode ser referido a Agropecuária, Agricultura, e a engenharia, entre muitas outras. Elas formam inovações e soluções no ambiente rural." +
+        "Introdução do agro" +
+        "Porém, em virtude da expansão da agropecuária e da utilização de métodos para o cultivo e criação de animais. Vários problemas ambientais estão sendo desencadeados. O desmatamento é uma prática muito utilizada nesse âmbito. A remoção da cobertura vegetal acarreta na redução da biodiversidade, erosão, extinção de espécies animais e vegetais, e contribui para o aquecimento global, entre muitos outros danos.Por isso, é importante darmos ênfase em formas mais tecnológicas para a preservação e a melhoria do meio ambiente. "
+      }
+    };
+  
+    // Check if a hash value exists in the URL
+    if (window.location.hash) {
+  
+      // Set the content of the webpage 
+      // depending on the hash value
+      if (window.location.hash == "#port") {
+        siteContent.textContent =
+          language.port.welcome;
+      }
+
+    }
+  </script>
+</body>
+  
+</html>
